@@ -1,5 +1,7 @@
 # bongoDev Incident Management — Ubuntu EC2 (No Docker)
 
+> **Checker: start with [SUBMISSION.md](SUBMISSION.md)** — screenshots, explanations and a requirement-to-evidence map. The checklist is in [STUDENT_HOMEWORK.md](STUDENT_HOMEWORK.md).
+
 **Start here: [step-by-step.md](step-by-step.md)** — complete student instructions from EC2 creation to manual app deployment, verification, redeployment, and cleanup.
 
 ## Lab goal
@@ -20,6 +22,8 @@ Then open **`http://YOUR_EC2_PUBLIC_IP/`** from your browser. The first installa
 
 | File | Purpose |
 |---|---|
+| `SUBMISSION.md` | Student submission: screenshots, explanations, evidence map |
+| `submission/screenshots/` | Numbered screenshots used by `SUBMISSION.md` |
 | `step-by-step.md` | Student lab from start to finish |
 | `frontend/` | React + Vite client |
 | `backend/` | Node.js + Express + PostgreSQL REST API |
@@ -30,7 +34,7 @@ Then open **`http://YOUR_EC2_PUBLIC_IP/`** from your browser. The first installa
 | `scripts/setup-database.sh` | Create database and local backend `.env` |
 | `scripts/deploy-ubuntu.sh` | Build UI, install systemd service and Nginx site |
 | `scripts/check-services.sh` | Display service and port diagnostics |
-| `.github/workflows/deploy.yml` | Optional GitHub Actions homework deployment |
+| `.github/workflows/deploy.yml` | GitHub Actions: build + deploy on the EC2 self-hosted runner |
 | `docs/GITHUB_ACTIONS.md` | Optional second-phase CI/CD walkthrough |
 
 > Educational demo: app has no authentication and uses HTTP. Do not store sensitive incidents; do not expose Node port 5000 or PostgreSQL port 5432 publicly. Terminate demo resources when finished to avoid AWS charges.

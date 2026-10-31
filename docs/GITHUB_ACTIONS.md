@@ -1,5 +1,7 @@
 # Part C — Automate manual Ubuntu EC2 deployment with GitHub Actions
 
+> **Variant used in this repository (self-hosted runner):** `.github/workflows/deploy.yml` runs both jobs on a GitHub Actions runner installed **on the EC2 instance** (Repo → Settings → Actions → Runners → *New self-hosted runner*). The deploy job copies the checked-out source into `~/incident-management-ubuntu-ec2` (keeping `backend/.env`) and runs `scripts/deploy-ubuntu.sh` locally, so **no SSH key, host-key secret or inbound port 22 is needed**. Sections C2–C5 below describe the alternative SSH + rsync approach from a GitHub-hosted runner and are **not required** for the self-hosted variant. Evidence: [SUBMISSION.md](../SUBMISSION.md).
+
 ## Learning objective
 
 Students already deployed the application manually using `bash scripts/deploy-ubuntu.sh`. Now the **same deployment script** will run automatically after `git push` to `main`:
